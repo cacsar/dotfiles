@@ -53,8 +53,10 @@ Control-option-N will open a new tab with the current directory under
 Mac OS X Terminal.
 
 If you're using git, you'll notice the current branch name shows up in
-the prompt while in a git repository.  I'm in the process of adding a 
-very large amount of prompt sexiness, mostly rvm-related.
+the prompt while in a git repository. Your repo's dirty status shows up
+with a bang. If you're using RVM, you'll notice your current ruby shows up
+on the prompt as well (much credit to tsaleh, for the best rvm prompt
+script I've yet seen). 
 
 If you're using Rails, you'll find some handy aliases (below). You can 
 also use show_log and hide_log in script/console to show the log inline.
