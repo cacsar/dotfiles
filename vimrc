@@ -87,8 +87,8 @@ set expandtab
 " Always display the status line
 set laststatus=2
 
-" \ is the leader character
-let mapleader = ","
+" \ is the default leader character
+let mapleader=' '
 
 " Edit the README_FOR_APP (makes :R commands work)
 map <Leader>R :e doc/README_FOR_APP<CR>
@@ -164,7 +164,9 @@ if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
 endif
 
+" Now folded into .gvimrc
 " Color scheme
+" colorscheme ir_black
 " colorscheme vividchalk
 " highlight NonText guibg=#060606
 " highlight Folded  guibg=#0A0A0A guifg=#9090D0
@@ -205,3 +207,6 @@ function! OpenURL()
 endfunction
 map <Leader>w :call OpenURL()<CR>
 
+"Easy empty line insertion in normal mode
+nnoremap <Return> o<Esc>k0
+nnoremap <S-Return> O<Esc>j0

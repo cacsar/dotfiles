@@ -1,6 +1,9 @@
-set guioptions-=T " hide toolbar
-set lines=55 columns=100
+"set guioptions-=T " hide toolbar
+set lines=60 columns=100
 
-colorscheme railscasts
+colorscheme ir_black
 
-set guifont=DejaVu\ Sans\ Mono:h13
+set guifont=Droid\ Sans\ Mono:h13
+
+"get some transparency up ins
+set transparency=5
