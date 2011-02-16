@@ -1,6 +1,8 @@
-= Ryan Bates Dot Files
+= Ben Somers' dotfiles
 
-These are config files to set up a system the way I like it.
+These are config files to set up a system the way I like it.  Forked them
+from Ryan Bates', because it seemed like a sensible reference point to start.
+He's primarily a zsh user, while I like bash, but I'm going to iron that out.
 
 
 == Installation
@@ -12,9 +14,12 @@ These are config files to set up a system the way I like it.
 
 == Environment
 
-I am running on Mac OS X, but it will likely work on Linux as well with 
-minor fiddling. I primarily use zsh, but this includes some older bash 
-files as well. If you would like to switch to zsh, you can do so with 
+Currently these are set for my office machine, running OS X, but my home
+computers are all Ubuntu, and so I intend to get these clean between all
+the machines.  I use bash, but at the moment this inherits Ryan's
+zsh changes, which I don't use or pay attention to.
+
+If you would like to switch to zsh, you can do so with 
 the following command.
 
   chsh -s /bin/zsh
@@ -48,7 +53,8 @@ Control-option-N will open a new tab with the current directory under
 Mac OS X Terminal.
 
 If you're using git, you'll notice the current branch name shows up in
-the prompt while in a git repository.
+the prompt while in a git repository.  I'm in the process of adding a 
+very large amount of prompt sexiness, mostly rvm-related.
 
 If you're using Rails, you'll find some handy aliases (below). You can 
 also use show_log and hide_log in script/console to show the log inline.
