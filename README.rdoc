@@ -9,14 +9,16 @@ He's primarily a zsh user, while I like bash, but I'm going to iron that out.
 
   git clone git://github.com/ryanb/dotfiles ~/.dotfiles
   cd ~/.dotfiles
+  If you're on OS X: git checkout osx
+  If you're on Ubuntu: git checkout ubuntu
   rake install
 
 
 == Environment
 
 Currently these are set for my office machine, running OS X, but my home
-computers are all Ubuntu, and so I intend to get these clean between all
-the machines.  I use bash, but at the moment this inherits Ryan's
+computers are all Ubuntu, and so I'm going to try maintaining files for both,
+controlled by branching.  I use bash, but at the moment this inherits Ryan's
 zsh changes, which I don't use or pay attention to.
 
 If you would like to switch to zsh, you can do so with 
