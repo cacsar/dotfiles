@@ -14,6 +14,10 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
+" Set syntax folding to automatic but unfolded by default
+set foldmethod=syntax
+set foldlevelstart=99
+
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -83,11 +87,12 @@ endif " has("autocmd")
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set softtabstop=2
 
 " Always display the status line
 set laststatus=2
 
-" \ is the default leader character
+" \ is the default leader character, set it to SPACEBAR instead
 let mapleader=' '
 
 " Edit the README_FOR_APP (makes :R commands work)
@@ -135,6 +140,9 @@ vmap P p :call setreg('"', getreg('0')) <CR>
 
 " For Haml
 au! BufRead,BufNewFile *.haml         setfiletype haml
+
+" Yank from the cursor to the end of the line, to be consistent with C and D.
+nnoremap Y y$
 
 " No Help, please
 nmap <F1> <Esc>
