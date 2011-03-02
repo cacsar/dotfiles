@@ -1,6 +1,9 @@
 # I use both MacVim and TextMate, but prefer MacVim for general-purpose editing
 export EDITOR="mvim"
 
+# add color to ls
+alias ls='ls -G'
+
 # To set grep to permanently colorize matches
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
