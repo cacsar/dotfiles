@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
-
 def change_log(stream)
   ActiveRecord::Base.logger = Logger.new(stream)
+  Object.const_set('RAILS_DEFAULT_LOGGER', ActiveRecord::Base.logger)
   ActiveRecord::Base.clear_active_connections!
 end
 
@@ -12,3 +12,7 @@ end
 def hide_log
   change_log(nil)
 end
+
+# Standard console output-logging inexplicably doesn't work for me; turn it on by uncommenting this
+#  require 'logger'
+#  Rails.logger = Logger.new(STDOUT)
