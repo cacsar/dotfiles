@@ -27,14 +27,14 @@
 	status = true
 	show-branch = true
 [format]
-	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+	pretty = %C(red)%h%Creset %s %Cblue %an %C(green)(%cr)%Creset
 [alias]
 	st = status
 	ci = commit
 	co = checkout
+  meld = mergetool -t meld #this is a linux-native mergetool; installing it requires ports, but it's great, I can give instructions if you want
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   br = branch
-  meld = mergetool -t meld 
+  pup = !sh -c 'git pull $1 $2 && git push $1 $2' -
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit --date=relative 
-  
