@@ -14,5 +14,5 @@ def hide_log
 end
 
 # Standard console output-logging inexplicably doesn't work for me; turn it on by uncommenting this
-#  require 'logger'
-#  Rails.logger = Logger.new(STDOUT)
+ # require 'logger'
+ # Rails.logger = Logger.new(STDOUT)
