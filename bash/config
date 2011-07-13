@@ -38,7 +38,8 @@ function __my_system_ruby_version {
 function __my_rvm_ruby_version {
   local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
   [ "$gemset" != "" ] && gemset="@$gemset"
-  local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2"-"$3}')
+  local version=$(echo $MY_RUBY_HOME | awk -F'\/' '{print $6}')
+  # local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2"-"$3}')
   [ "$version" == "-" ] && version="$(__my_system_ruby_version)"
   local full="$version$gemset"
   [ "$full" != "" ] && echo "$full "
