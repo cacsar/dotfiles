@@ -8,6 +8,14 @@ alias ls='ls -G'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
+# Improve Ruby performance for Rails apps
+# Increases memory consumption and startup times for irb or lightweight scripts
+export RUBY_HEAP_MIN_SLOTS=2000000
+export RUBY_HEAP_SLOTS_INCREMENT=250000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=50000000
+export RUBY_HEAP_FREE_MIN=20000
+
 # Load ssh key at the start of every session (why can't OS X do this automatically?)
 ssh-add ~/.ssh/id_rsa
 ssh-add ~/.ssh/id_rsa_br
