@@ -13,7 +13,7 @@ if has("gui_macvim")
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 
   " Command-Shift-F for Ack
-  map <D-F> :Ack<space>
+  map <D-F> :Ack<space>--follow<space>
 
   " Command-e for ConqueTerm
   map <D-e> :call StartTerm()<CR>
@@ -21,7 +21,6 @@ if has("gui_macvim")
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
   imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
-
 
   " Command-][ to increase/decrease indentation
   vmap <D-]> >gv

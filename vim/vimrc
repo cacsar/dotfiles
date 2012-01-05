@@ -6,7 +6,7 @@
 set nocompatible
 
 " \ is the default leader character, set it to SPACEBAR instead
-let mapleader=' '
+let mapleader=','
 
 " Numbers
 set number
@@ -28,7 +28,8 @@ set expandtab
 " set list listchars=tab:»·,trail:·
 
 " Set syntax folding to automatic but unfolded by default
-set foldmethod=syntax
+" For Ruby files, have to use indent folding, syntax folding is too slow
+set foldmethod=indent
 set foldlevelstart=99
 
 " Searching
@@ -120,6 +121,13 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
+" Switch ' and `; more useful mark-jumping
+nnoremap ' `
+nnoremap ` '
+
+" Insert hashrocket in insert mode
+imap <C-l> <Space>=><Space>
+
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
@@ -156,6 +164,12 @@ runtime! macros/matchit.vim
 " Show (partial) command in the status line
 set showcmd
 
+" Hide search highlighting
+map <Leader>h :set invhls <CR>
+
+" use w!! to write with sudo when you forgot to sudo
+cmap w!! %!sudo tee > /dev/null %
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
@@ -187,9 +201,6 @@ endif
 " map <Leader>sv :RSview 
 " map <Leader>su :RSunittest 
 " map <Leader>sf :RSfunctionaltest 
-
-" Hide search highlighting
-" map <Leader>h :set invhls <CR>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -295,9 +306,9 @@ endif
 " let g:rubytest_in_quickfix = 1
 
 " Mappings for ruby_focused_unit_test.vim
-" map <silent> <Leader>rb :RunAllRubyTests<CR>
-" map <silent> <Leader>rc :RunRubyFocusedContext<CR>
-" map <silent> <Leader>rf :RunRubyFocusedUnitTest<CR>
+map <silent> <Leader>rb :RunAllRubyTests<CR>
+map <silent> <Leader>rc :RunRubyFocusedContext<CR>
+map <silent> <Leader>rf :RunRubyFocusedUnitTest<CR>
 
 " window
 " nmap <leader>swh :topleft  vnew<CR>
