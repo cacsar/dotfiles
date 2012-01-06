@@ -252,9 +252,9 @@ endif
 " endif
 
 " Use Ack instead of Grep when available
-" if executable("ack")
-"   set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
-" endif
+if executable("ack")
+  set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
+endif
 
 " Now folded into .gvimrc
 " Color scheme
