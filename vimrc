@@ -14,6 +14,8 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
+set t_Co=256 "Claim that our terminal can always use 256 colors. Will break things on some terminals
+
 " Set syntax folding to automatic but unfolded by default
 set foldmethod=syntax
 set foldlevelstart=99
