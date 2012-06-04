@@ -37,4 +37,5 @@
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   br = branch
   pup = !sh -c 'git pull $1 $2 && git push $1 $2' -
+  cop = !sh -c 'git checkout $1 && git pull' -
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit --date=relative 

@@ -7,7 +7,7 @@ He's primarily a zsh user, while I like bash, but I'm going to iron that out.
 
 == Installation
 
-  git clone git://github.com/ryanb/dotfiles ~/.dotfiles
+  git clone git://github.com/bensomers/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   If you're on OS X: git checkout osx
   If you're on Ubuntu: git checkout ubuntu
