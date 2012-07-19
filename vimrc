@@ -15,7 +15,7 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
 set t_Co=256 "Claim that our terminal can always use 256 colors. Will break things on some terminals
-
+color elflord
 " Set syntax folding to automatic but unfolded by default
 set foldmethod=syntax
 set foldlevelstart=99
@@ -85,11 +85,14 @@ endif " has("autocmd")
   " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
 " endif
 
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
+" Softtabs, 4 spaces
+set tabstop=4
+set shiftwidth=4
 set expandtab
-set softtabstop=2
+set softtabstop=4
+
+" 80 Character columns
+set cc=80
 
 " Always display the status line
 set laststatus=2
