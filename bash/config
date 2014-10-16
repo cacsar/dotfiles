@@ -1,8 +1,10 @@
+#currently using Brew for work
 # For Fink
-test -r /sw/bin/init.sh && . /sw/bin/init.sh
+#test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 # I use both MacVim and TextMate, but prefer MacVim for general-purpose editing
 export EDITOR="mvim"
+#export EDITOR="vim"
 
 # add color to ls
 alias ls='ls -G'
@@ -13,18 +15,18 @@ export GREP_COLOR='1;32'
 
 # Improve Ruby performance for Rails apps
 # Increases memory consumption and startup times for irb or lightweight scripts
-export RUBY_HEAP_MIN_SLOTS=2000000
-export RUBY_HEAP_SLOTS_INCREMENT=250000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=50000000
-export RUBY_HEAP_FREE_MIN=20000
+#export RUBY_HEAP_MIN_SLOTS=2000000
+#export RUBY_HEAP_SLOTS_INCREMENT=250000
+#export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+#export RUBY_GC_MALLOC_LIMIT=50000000
+#export RUBY_HEAP_FREE_MIN=20000
 
 # Load ssh key at the start of every session (why can't OS X do this automatically?)
-ssh-add ~/.ssh/id_rsa
-ssh-add ~/.ssh/id_rsa_br
+
+#ssh-add ~/.ssh/id_rsa
 
 # load rvm 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # increase bash command history
 export HISTSIZE=100000
@@ -92,7 +94,7 @@ bash_prompt() {
   local UC=$W                 # user's color
   [ $UID -eq "0" ] && UC=$R   # root's color
 
-  PS1="$EMC\$(__my_rvm_ruby_version )$Y\h: $G\w$EMW\$(__git_branch)$EMY\$(__git_dirty)${NONE}$W $ "
+  PS1="$EMC\$Y\h: $G\w$EMW\$(__git_branch)$EMY\$(__git_dirty)${NONE}$W $ "
 }
 
 bash_prompt
