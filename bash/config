@@ -5,7 +5,7 @@ export EDITOR="vim"
 alias ls='ls -G'
 
 # To set grep to permanently colorize matches
-export GREP_OPTIONS='--color=auto'
+alias grep="grep --color=auto"
 export GREP_COLOR='1;32'
 
 # Improve Ruby performance for Rails apps
