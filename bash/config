@@ -8,13 +8,6 @@ alias ls='ls -G'
 alias grep="grep --color=auto"
 export GREP_COLOR='1;32'
 
-# Improve Ruby performance for Rails apps
-# Increases memory consumption and startup times for irb or lightweight scripts
-#export RUBY_HEAP_MIN_SLOTS=2000000
-#export RUBY_HEAP_SLOTS_INCREMENT=250000
-#export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-#export RUBY_GC_MALLOC_LIMIT=50000000
-#export RUBY_HEAP_FREE_MIN=20000
 
 #Start ssh-agent ourselves.
 if [[ -z ${SSH_AUTH_SOCK} ]] || [[ -n $(echo ${SSH_AUTH_SOCK} | grep -E "^/run/user/$(id -u)/keyring/ssh$") ]]; then
@@ -33,8 +26,6 @@ fi
 
 #ssh-add ~/.ssh/id_rsa
 
-# load rvm 
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # increase bash command history
 export HISTSIZE=100000
@@ -49,21 +40,6 @@ function __git_dirty {
 
 function __git_branch {
   __git_ps1 "[%s]"
-}
-
-function __my_system_ruby_version {
-  local version=$(ruby -v | awk '{print $2"-p"$5}' | awk -F ')' '{print $1}')
-  echo "system-$version"
-}
-
-function __my_rvm_ruby_version {
-  local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
-  [ "$gemset" != "" ] && gemset="@$gemset"
-  local version=$(echo $MY_RUBY_HOME | awk -F'\/' '{print $6}')
-  # local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2"-"$3}')
-  [ "$version" == "-" ] && version="$(__my_system_ruby_version)"
-  local full="$version$gemset"
-  [ "$full" != "" ] && echo "$full "
 }
 
 bash_prompt() {

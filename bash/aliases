@@ -1,5 +1,15 @@
 . ~/.zsh/aliases
 
+# cd
+alias ..='cd ..'
+
+# git
+alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+
+# misc
+alias reload='. ~/.bash_profile'
+
+
 # changing directory to code project
 function c { cd ~/code/$1/$2; }
 
@@ -58,6 +68,3 @@ function tmx
       fi
   fi 
 }
-
-# misc
-alias reload='. ~/.bash_profile'
